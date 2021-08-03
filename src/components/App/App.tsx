@@ -1,12 +1,15 @@
 import React from "react";
 import "./App.css";
 import TodoList from "../TodoList/TodoList";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 function App() {
   return (
-    <div className="App">
-      <TodoList />
-    </div>
+    <QueryClientProvider client={new QueryClient()}>
+      <div className={"app"}>
+        <TodoList />
+      </div>
+    </QueryClientProvider>
   );
 }
 
