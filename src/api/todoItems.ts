@@ -13,3 +13,10 @@ export const getItems: Service_TodoItems.Actions["getItems"] = async () => {
   const response = await axiosInstance.get("/items");
   return response.data;
 };
+
+export const addItem: Service_TodoItems.Actions["postItem"] = async (
+  item: Service_TodoItems.TodoItem
+) => {
+  const response = await axiosInstance.post("/items", item);
+  return response.data;
+};

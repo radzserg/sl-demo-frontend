@@ -1,6 +1,7 @@
 declare namespace Service_TodoItems {
   type Actions = {
-    getItems: () => Promise<TodoItem[]>;
+    getItems: () => Promise<{ items: TodoItem[] }>;
+    postItem: (item: TodoItem) => Promise<TodoItem>;
   };
 
   type TodoItem = {
